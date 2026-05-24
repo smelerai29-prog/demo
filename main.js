@@ -1,55 +1,19 @@
-$(document).ready(function(){
+// Simple JavaScript for Interior Design Website
 
-  $('.fa-bars').click(function(){
-    $(this).toggleClass('fa-times');
-    $('nav').toggleClass('nav-toggle');
-  });
+// Show welcome message
+alert("Welcome to Interior Design Website!");
 
-  $(window).on('scroll load',function(){
-    $('.fa-bars').removeClass('fa-times');
-    $('nav').removeClass('nav-toggle');
-  });
+// Contact form submit message
+const form = document.querySelector("form");
 
-  $('.count').each(function(){
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
 
-    var $this = $(this),
-        countTo = $this.attr('data-count');
-
-    $({ countNum: 0 }).animate({
-
-      countNum: countTo
-
-    },
-
-    {
-
-      duration: 4000,
-
-      step: function(){
-
-        $this.text(Math.floor(this.countNum));
-
-      },
-
-      complete: function(){
-
-        $this.text(this.countNum + '+');
-
-      }
-
-    });
-
-  });
-
-  $('.project').magnificPopup({
-
-    delegate:'a',
-    type:'image',
-
-    gallery:{
-      enabled:true
-    }
-
-  });
-
+  alert("Your message has been sent successfully!");
 });
+
+// Change page title when user clicks
+document.title = "Interior Design Website";
+
+// Console message
+console.log("Website Loaded Successfully");
